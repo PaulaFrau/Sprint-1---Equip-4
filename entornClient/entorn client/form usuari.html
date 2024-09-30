@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari Users</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Usuarios</h1>
+
+    <form id="crearForm">
+        <label for="nombre">Nombre:</label> 
+        <input type="text" id="nombre" name="nombre" required maxlength="20" pattern="[A-Za-zÀ-ÿ\s]{2,20}"><br><br>
+
+        <label for="correo">Correo:</label> 
+        <input type="email" id="correo" name="correo" required pattern="/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/"><br><br>
+
+        <label for="telefono">Teléfono:</label> 
+        <input type="text" id="telefono" name="telefono" required pattern="^\d{3}\s\d{3}\s\d{3}$"><br><br>
+
+        <label for="password">Contraseña (6-15 caracteres, 1 mayúscula, 1 número, 1 carácter especial):</label> 
+        <input type="password" id="password" name="password" required pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,15}$"><br><br>
+
+        <button type="submit" id="crearUsers">Crear</button>
+        <button type="submit" id="llistarUsers">Llistar</button>
+        <button type="submit" id="guardar" style="display: none;">Guardar</button>
+        
+    </form>
+
+    <div id="userList" style="display: none;"> 
+        <div id="lista"></div>
+        <button type="submit" id="volver" style="margin-top: 30px; margin-left: 350px;">Volver</button>
+    </div>
+
+    <div id="error" style="display: none;">
+        <p id="missatgeError"></p>
+    </div>
+
+</body>
+</html>
+
+

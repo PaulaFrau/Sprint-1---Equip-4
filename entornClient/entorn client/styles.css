@@ -1,0 +1,10 @@
+/* Estilo para mensajes de error */
+#error {
+    color: red;
+    margin-top: 10px;
+}
+
+/* Estilo de los campos con error */
+.error {
+    border: 1px solid red;
+}
