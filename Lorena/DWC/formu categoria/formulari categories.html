@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de formulario</title>
+    <script src="script.js" defer></script>
+    <style>
+        .error {
+            border: solid 2px #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <form  id="elFormulari">
+        <table>
+            <tr>
+                <td> ID Categoría: </td>
+                <td><input type="number" name="id_categoria" id="id_categoria" required/></td>
+            </tr>
+            <tr>
+                <td> Nombre: </td>
+                <td><input type="text" name="nombre" id="nombre" maxlength="50" pattern=".{5,50}" title="Introduce entre 5 y 50 caracteres" required/></td>
+            </tr>
+            <tr>
+                <td> Descripción: </td>
+                <td><textarea name="descripcion" id="descripcion"  pattern=".{5,300}"  title="La descripción debe tener al menos 20 caracteres" required></textarea></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="button" id="crear" value="Crear Categoría" onclick="crearCategoria()" >
+                    <input type="button" id="confirmar" value="Confirmar Cambios" onclick="modificarCategoria()" >
+                    <input type="button" id="listar" value="Listar Categorías">
+                </td>
+            </tr>
+        </table>
+        <p id="missatgeError"></p>
+    </form>
+    <div id="categorias-container"></div>
+</body>
+</html>
