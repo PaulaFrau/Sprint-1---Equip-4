@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validació de formulari amb HTML5 i JS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="article.js" defer></script>
+    <style>
+
+        .error {
+            border: solid 2px #FF0000;
+        }
+    </style>
+</head>
+<body>
+    <form action="procesar.php" method="post" id="elFormulari">
+        <table>
+            <tr>
+                <td> Títol: </td>
+                <td><input type="text" name="titol" id="titol" maxlength="50" pattern=".{5,50}" title="Introdueix entre 5 i 50 caracters" required/></td>
+            </tr>
+            <tr>
+                <td> Subtítol: </td>
+                <td><input type="text" name="subtitol" id="subtitol" maxlength="100" pattern=".{5,100}" title="Introdueix entre 5 i 100 caracters" required/></td>
+            </tr>
+            <tr>
+                <td> Cos: </td>
+                <td><textarea name="cos" id="cos" minlength="20" title="El cos ha de tenir almenys 20 caracters" required></textarea></td>
+            </tr>
+            <tr>
+                <td> Imatge (URL): </td>
+                <td><input type="imatge" name="imatge" id="imatge" title="Introdueix una URL vàlida" required/></td>
+            </tr>
+            <tr>
+                <td> Data: </td>
+                <td><input type="date" name="data" id="data" required/></td>
+            </tr>
+            <tr>
+                <td> Usuari: </td>
+                <td><input type="text" name="usuari" id="usuari" pattern=".{3,15}" title="El nom d'usuari ha de ser entre 3 i 15 caracters" required/></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="button" id="confirmar" value="Confirmar Cambios" onclick="modificarArticle()">
+                    <input type="button" id="crear" value="Crear Artículo" onclick="crearArticle()">
+                    <input type="button" id="listar" value="Listar Artículo">
+                </td>
+            </tr>
+            
+        </table>
+        <p id="missatgeError"></p>
+    </form>
+    <div id="articles-container"></div>
+
+</body>
+</html>
